@@ -4,7 +4,7 @@
     font-family: Helvetica, sans-serif;
 }
 
-title {
+.title {
     text-align: center;
     text-transform:uppercase;
 }
@@ -62,13 +62,13 @@ title {
     border: none;
 }
 
-updateLink {
+.updateLink {
     text-decoration: none;
     padding-right: 15px;
     font-size: .7rem;
 }
 
-deleteLink {
+.deleteLink {
     text-decoration: none;
     padding-right: 15px;
     font-size: .7rem;

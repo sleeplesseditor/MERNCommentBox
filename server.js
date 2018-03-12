@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
     res.json({ message: 'API Initialized!' });
 });
 
-//Comments route
+//Post and Get Comments route
 router.route('/comments')
     .get(function(req, res) {
         Comment.find(function(err, comments) {
@@ -48,6 +48,33 @@ router.route('/comments')
             res.send(err);
             res.json({ message: 'Comment successfully added!' });
         });
+    });
+
+//Update Comments route
+router.route('/comments/:comment_id')
+    .put(function(req, res) {
+        Comment.findById(req.params.comment_id, function(err, comment) {
+            if (err)
+                res.send(err);
+
+            (req.body.author) ? comment.author = req.body.author : null;
+            (req.body.text) ? comment.text = req.body.text : null;
+
+            comment.save(function(err) {
+                if (err)
+                    res.send(err);
+                res.json({ message: 'Comment has been updated' });
+            });
+        });
+    })
+
+    //Delete Comments route
+    .delete(function(req, res) {
+        Comment.remove({ _id: req.params.comment_id }, function(err, comment) {
+            if (err)
+                res.send(err);
+            res.json({ message: 'Comment has been deleted' })
+        })
     });
 
 app.use('/api', router);
