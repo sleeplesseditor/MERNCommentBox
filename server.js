@@ -3,11 +3,14 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var Comment = require('./model/comments');
 
 var app = express();
 var router = express.Router();
 
 var port = process.env.API_PORT || 3001;
+
+mongoose.connect('mongodb://josh:fullstack@ds211289.mlab.com:11289/commentbox');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
