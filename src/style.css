@@ -1,4 +1,4 @@
-commentBox {
+.commentBox {
     width: 80vw;
     margin: 0 auto;
     font-family: Helvetica, sans-serif;
@@ -9,28 +9,28 @@ title {
     text-transform:uppercase;
 }
 
-commentList {
+.commentList {
     border:1px solid #f1f1f1;
     padding: 0 12px;
     max-height: 70vh;
     overflow: scroll;
 }
 
-comment {
+.comment {
     background-color: #fafafa;
     margin: 10px;
     padding: 3px 10px;
     font-size: 1rem;
 }
 
-commentForm {
+.commentForm {
     margin: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
 
-commentFormAuthor {
+.commentFormAuthor {
     min-width: 150px;
     margin: 3px;
     padding: 0 10px;
@@ -39,7 +39,7 @@ commentFormAuthor {
     flex: 2;
 }
 
-commentFormText {
+.commentFormText {
     flex: 4;
     min-width: 400px;
     margin: 3px;
@@ -48,7 +48,7 @@ commentFormText {
     border-radius: 3px;
 }
 
-commentFormPost {
+.commentFormPost {
     min-width: 75px;
     flex: 1;
     height: 40px;
